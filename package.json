@@ -1,0 +1,28 @@
+{
+  "name": "sdc-ratingsandreviews",
+  "version": "1.0.0",
+  "description": "ratings and reviews system design",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server-dev": "npx nodemon --watch server server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rfp2204-fs-sdc5-rebel-alliance/SDC-RatingsAndReviews.git"
+  },
+  "author": "Neil Johnson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rfp2204-fs-sdc5-rebel-alliance/SDC-RatingsAndReviews/issues"
+  },
+  "homepage": "https://github.com/rfp2204-fs-sdc5-rebel-alliance/SDC-RatingsAndReviews#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
