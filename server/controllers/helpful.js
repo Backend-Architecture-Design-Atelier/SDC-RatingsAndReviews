@@ -2,7 +2,7 @@ const models = require('../models/helpful.js');
 
 module.exports = {
   put: function (req, res) {
-    const review_id = req.params.review_id
+    const review_id = req.params.review_id;
     models.updateHelpfulness(review_id, (err) => {
       if (err) {
         console.log(err);
