@@ -12,11 +12,11 @@ CREATE TABLE reviews (
   summary TEXT DEFAULT NULL,
   body TEXT NOT NULL,
   recommend BOOLEAN NOT NULL,
-  reported BOOLEAN NOT NULL,
+  reported BOOLEAN DEFAULT FALSE,
   reviewer_name TEXT NOT NULL,
   reviewer_email TEXT NOT NULL,
   response TEXT DEFAULT NULL,
-  helpfulness INTEGER NOT NULL
+  helpfulness INTEGER DEFAULT 0
 );
 
 DROP TABLE IF EXISTS photos CASCADE;
