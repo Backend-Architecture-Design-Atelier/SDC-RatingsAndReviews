@@ -8,7 +8,7 @@ module.exports = {
         console.log(err);
         res.status(404).send();
       } else {
-        res.status(201).send();
+        res.status(204).send();
       }
     })
   }

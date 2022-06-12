@@ -12,7 +12,7 @@ module.exports = {
       } else {
         res.status(200).send(reviews);
       }
-    })
+    });
   },
 
   post: function (req, res) {
@@ -23,6 +23,6 @@ module.exports = {
       } else {
         res.status(201).send();
       }
-    })
+    });
   }
 };
