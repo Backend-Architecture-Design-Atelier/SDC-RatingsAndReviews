@@ -7,11 +7,11 @@ module.exports = {
     SELECT json_build_object (
       'product_id', ${product_id},
       'ratings', json_build_object (
-        '1', (SELECT COUNT(*) FROM reviews WHERE product_id = ${product_id} AND rating = 1),
-        '2', (SELECT COUNT(*) FROM reviews WHERE product_id = ${product_id} AND rating = 2),
-        '3', (SELECT COUNT(*) FROM reviews WHERE product_id = ${product_id} AND rating = 3),
-        '4', (SELECT COUNT(*) FROM reviews WHERE product_id = ${product_id} AND rating = 4),
-        '5', (SELECT COUNT(*) FROM reviews WHERE product_id = ${product_id} AND rating = 5)
+        '1', (SELECT COUNT(rating) FROM reviews WHERE product_id = ${product_id} AND rating = 1),
+        '2', (SELECT COUNT(rating) FROM reviews WHERE product_id = ${product_id} AND rating = 2),
+        '3', (SELECT COUNT(rating) FROM reviews WHERE product_id = ${product_id} AND rating = 3),
+        '4', (SELECT COUNT(rating) FROM reviews WHERE product_id = ${product_id} AND rating = 4),
+        '5', (SELECT COUNT(rating) FROM reviews WHERE product_id = ${product_id} AND rating = 5)
       ),
       'recommended', json_build_object (
         'false', (SELECT COUNT(*) FROM reviews WHERE product_id = ${product_id} AND recommend = false),

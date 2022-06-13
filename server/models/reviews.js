@@ -107,7 +107,6 @@ module.exports = {
                 const characteristicReviewsQuery =`
                   INSERT INTO characteristic_reviews (characteristic_id, review_id, value)
                   VALUES ($1, $2, $3)
-                  RETURNING *
                 `;
 
                 pool.query(characteristicReviewsQuery, characteristicReviewsQueryArgs, (err, newReview) => {
