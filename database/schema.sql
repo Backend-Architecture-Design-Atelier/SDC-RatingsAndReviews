@@ -68,7 +68,13 @@ CREATE INDEX CONCURRENTLY characteristics_product_id_index on characteristics (p
 DROP INDEX IF EXISTS c_reviews_characteristic_id_index;
 CREATE INDEX c_reviews_characteristic_id_index on characteristic_reviews (characteristic_id);
 
-COPY reviews FROM '/Users/neil/hr-immersive/sdc/SDC-RatingsAndReviews/example_data/reviews.csv' DELIMITER ',' CSV Header;
-COPY photos FROM '/Users/neil/hr-immersive/sdc/SDC-RatingsAndReviews/example_data/reviews_photos.csv' DELIMITER ',' CSV Header;
-COPY characteristics FROM '/Users/neil/hr-immersive/sdc/SDC-RatingsAndReviews/example_data/characteristics.csv' DELIMITER ',' CSV Header;
-COPY characteristic_reviews FROM '/Users/neil/hr-immersive/sdc/SDC-RatingsAndReviews/example_data/characteristic_reviews.csv' DELIMITER ',' CSV Header;
+-- COPY reviews FROM '/Users/neil/hr-immersive/sdc/SDC-RatingsAndReviews/example_data/reviews.csv' DELIMITER ',' CSV Header;
+-- COPY photos FROM '/Users/neil/hr-immersive/sdc/SDC-RatingsAndReviews/example_data/reviews_photos.csv' DELIMITER ',' CSV Header;
+-- COPY characteristics FROM '/Users/neil/hr-immersive/sdc/SDC-RatingsAndReviews/example_data/characteristics.csv' DELIMITER ',' CSV Header;
+-- COPY characteristic_reviews FROM '/Users/neil/hr-immersive/sdc/SDC-RatingsAndReviews/example_data/characteristic_reviews.csv' DELIMITER ',' CSV Header;
+
+
+-- \copy reviews FROM './home/reviews.csv' DELIMITER ',' CSV Header;
+-- \copy photos FROM './home/reviews_photos.csv' DELIMITER ',' CSV Header;
+-- \copy characteristics FROM './home/characteristics.csv' DELIMITER ',' CSV Header;
+-- \copy characteristic_reviews FROM './home/characteristic_reviews.csv' DELIMITER ',' CSV Header;
