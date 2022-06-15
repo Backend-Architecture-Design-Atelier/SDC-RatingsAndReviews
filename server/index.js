@@ -8,6 +8,10 @@ app.use(express.json());
 
 app.use('/reviews', router);
 
+app.get(`/${process.env.LOADER}`, (req, res) => {
+  res.send(`${process.env.LOADER}`);
+});
+
 const port = process.env.PORT;
 
 app.listen(port, () => {console.log(`listening on ${port}`)});
