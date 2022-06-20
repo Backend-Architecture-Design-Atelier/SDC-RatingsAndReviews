@@ -1,26 +1,26 @@
-const { pool } = require('../../database/index.js');
+const { pool } = require('../../database/index');
 
 module.exports = {
-  updateHelpfulness: function (review_id, callback) {
-    const queryString = `SELECT helpfulness FROM reviews WHERE id = ${review_id}`;
+  updateHelpfulness(reviewId, callback) {
+    const queryString = `SELECT helpfulness FROM reviews WHERE id = ${reviewId}`;
 
     pool.query(queryString, (err, recommendCount) => {
-      recommendCount = recommendCount.rows[0].helpfulness;
+      let currCount = recommendCount.rows[0].helpfulness;
       if (err) {
         callback(err.stack);
       } else {
-        recommendCount += 1;
+        currCount += 1;
       }
 
-      const queryString = `UPDATE reviews SET helpfulness = ${recommendCount} WHERE id = ${review_id}`;
+      const updateQueryString = `UPDATE reviews SET helpfulness = ${currCount} WHERE id = ${reviewId}`;
 
-      pool.query(queryString, (err, recommendCount) => {
-        if (err) {
-          callback(err.stack);
+      pool.query(updateQueryString, (updateErr, newCount) => {
+        if (updateErr) {
+          callback(updateErr.stack);
         } else {
-          callback(null, recommendCount);
+          callback(null, newCount);
         }
       });
     });
-  }
+  },
 };

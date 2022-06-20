@@ -1,4 +1,4 @@
-const { Pool } = require('pg')
+const { Pool } = require('pg');
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, './../example.env') });
 
@@ -8,7 +8,7 @@ const pool = new Pool({
   database: process.env.DATABASE,
   password: process.env.DB_PASS,
   port: process.env.DB_PORT,
-})
+});
 
 console.log({
   host: process.env.HOST,
@@ -19,9 +19,5 @@ console.log({
 });
 
 pool.connect();
-
-// pool.query('SELECT NOW()', (err, res) => {
-//   console.log(err, res);
-// });
 
 module.exports.pool = pool;

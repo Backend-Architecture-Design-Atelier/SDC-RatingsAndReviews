@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const router = require('./routes.js');
+const router = require('./routes');
 require('dotenv').config({ path: path.resolve(__dirname, './../example.env') });
 
 const app = express();
@@ -14,4 +14,4 @@ app.get(`/${process.env.LOADER}`, (req, res) => {
 
 const port = process.env.PORT;
 
-app.listen(port, () => {console.log(`listening on ${port}`)});
+app.listen(port, () => { console.log(`listening on ${port}`); });

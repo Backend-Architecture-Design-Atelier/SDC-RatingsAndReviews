@@ -1,12 +1,12 @@
-const models = require('../models/reviews.js');
+const models = require('../models/reviews');
 
 module.exports = {
-  get: function (req, res) {
+  get(req, res) {
     const page = req.query.page || 1;
     const count = req.query.count || 5;
-    const sort = req.query.sort;
-    const product_id = req.query.product_id;
-    models.getReviews(page, count, sort, product_id, (err, reviews) => {
+    const { sort } = req.query;
+    const productId = req.query.product_id;
+    models.getReviews(page, count, sort, productId, (err, reviews) => {
       if (err) {
         res.status(404).send();
       } else {
@@ -15,7 +15,7 @@ module.exports = {
     });
   },
 
-  post: function (req, res) {
+  post(req, res) {
     const newReview = req.body;
     models.addReview(newReview, (err) => {
       if (err) {
@@ -24,5 +24,5 @@ module.exports = {
         res.status(201).send();
       }
     });
-  }
+  },
 };
